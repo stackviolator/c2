@@ -14,12 +14,12 @@ padding = b'\x00' * (2000 - len(config) - 1)
 config = xor(config) + b"\xff" + padding
 
 # Find {"Hostname"
-with open('c2', 'rb') as binFile:
+with open('./bin/c2', 'rb') as binFile:
     byteData = bytearray(binFile.read())
 binFile.close()
 offset = byteData.find(b'{"Hostname"')
 
 # Write data
-with open('c2', 'r+b') as binFile:
+with open('./bin/c2', 'r+b') as binFile:
     binFile.seek(offset)
     binFile.write(config)

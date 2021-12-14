@@ -1,9 +1,9 @@
 #!/bin/bash
 
-string=$(g++ main.c config.c -o c2)
+string=$(g++ main.c config.c -o bin/c2)
 
 if [ $? -ne 0 ]; then
 	echo $string
 else
-	$(pwd)/c2
+	$(pwd)/bin/c2
 fi
